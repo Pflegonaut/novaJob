@@ -1,24 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled, { ThemeProvider} from 'styled-components';
+import "./container/UI/Theme";
+
+import styledButton from './container/UI/Buttons';
+
+import './App.scss';
+import firebase from "./config/fire";
+import Layout from './components/Layout/Layout';
+import Login from "./components/Auth/Login";
+import SignUp from "./components/Auth/SignUp";
+import Try from './Try';
+import StyledButton from './container/UI/Buttons';
+
+import theme from './container/UI/Theme';
+
+// theme
+
+
+// firebase.firestore().collection('times').add({
+//   title: 'hello world',
+//   hello: 'world'
+// })
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <StyledButton>Lalal</StyledButton>
+        <Layout/>
+        <Try/>
+    </ThemeProvider>, 
+
     </div>
   );
 }

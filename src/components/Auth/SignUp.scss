@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+
+.signUp{
+    color: black;
+    text-align: center;
+}
+
+.signUp-name-field{
+    width: 70%;
+    padding: 10px;
+    margin: 0px 0 22px 0;
+    cursor: pointer;
+    font-size: 20px;
+    border-style: solid;
+    border-color: black;
+    transition: 300ms ease;
+    display: inline-block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #5C8C93;
+    // background: url(../../assets/SignUp/icons8-rocket_filled.png) 
+    // no-repeat scroll 7px 0px;
+    background-size: 30px;
+    padding-left: 45px;
+}
+
+
+.signUp-email-field{
+    width: 70%;
+    padding: 10px;
+    margin: 0px 0 22px 0;
+    cursor: pointer;
+    font-size: 20px;
+    border-style: solid;
+    border-color: black;
+    transition: 300ms ease;
+    display: inline-block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #5C8C93;
+    // background: url(../../assets/SignUp/icons8-message_filled.png) 
+    // no-repeat scroll 7px 5px;
+    background-size: 30px;
+    padding-left: 45px;
+}
+
+.signUp-password-field{
+    width: 70%;
+    padding: 10px;
+    margin: 0px 0 22px 0;
+    cursor: pointer;
+    font-size: 20px;
+    border-style: solid;
+    border-color: black;
+    transition: 300ms ease;
+    display: inline-block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #5C8C93;
+    // background: url(../../assets/SignUp/icons8-privacy_filled.png) 
+    // no-repeat scroll 7px 0px;
+    background-size: 30px;
+    padding-left: 45px;
+}
+
+.signUpPic{
+    width: auto;
+    height: 150px;
+    // todo
+    margin-right: 16%;
+}
+
+.discoverNewWorlds{
+    font-family: 'Amatic SC', cursive;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.signUpBtn {
+    width: 85%;
+    background-color: #5C8C93;
+    border: none;
+    color: white;
+    padding: 15px;
+    margin: 0px 0px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.signUp-name-field::placeholder{
+    font-size: 15px;
+}
+
+.signUp-password-field::placeholder{
+    font-size: 15px;
+}
+
+.signUp-email-field::placeholder{
+    font-size: 15px;
+}
+
+.linkToLogin{
+    color: black;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.error{
+    color: #CF0068;
+    padding: 130px;
+}
