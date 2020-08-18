@@ -1,38 +1,68 @@
-import React from 'react';
-import styled, { ThemeProvider} from 'styled-components';
-import "./container/UI/Theme";
+import React, { Component } from 'react';
+import firebase from 'firebase';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
-import styledButton from './container/UI/Buttons';
+    // Initialize Firebase
+    firebase.initializeApp({
+      apiKey: "AIzaSyCI3ayGUj_SqmP1kXou0VBWtnLcoggn9PY",
+      authDomain: "novahealnovajob.firebaseapp.com",
+      databaseURL: "https://novahealnovajob.firebaseio.com",
+      projectId: "novahealnovajob",
+      storageBucket: "novahealnovajob.appspot.com",
+      messagingSenderId: "881927535319",
+      appId: "1:881927535319:web:486d87ad03ba3a072dce92",
+      measurementId: "G-QTNXBXSV60"
+    });
 
-import './App.scss';
-import firebase from "./config/fire";
-import Layout from './components/Layout/Layout';
-import Login from "./components/Auth/Login";
-import SignUp from "./components/Auth/SignUp";
-import Try from './Try';
-import StyledButton from './container/UI/Buttons';
+class App extends Component {
+  constructor (props) {
+    super(props);  
 
-import theme from './container/UI/Theme';
-
-// theme
-
-
-// firebase.firestore().collection('times').add({
-//   title: 'hello world',
-//   hello: 'world'
-// })
-
-function App() {
-  return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-        <StyledButton>Lalal</StyledButton>
-        <Layout/>
-        <Try/>
-    </ThemeProvider>, 
-
-    </div>
-  );
+  this.state = {
+    isSignedIn : false
+  }
 }
+
+uiConfig = {
+  signInFlow: "popup",
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ],
+  callbacks: {
+    signInSuccess: () => false
+  }
+}
+
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(
+      user => {
+        this.setState({isSignedIn: !!user})
+      }
+    )
+  }
+
+  render() {
+    return (
+     <div className="App">
+     {this.state.isSignedIn ? (
+       <span>
+          <div>Signed In!</div>
+          <button onClick={() => firebase.auth().signOut()}>Sign Out!</button>
+          <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
+       </span>
+     ) :
+     (
+       <StyledFirebaseAuth 
+         uiConfig = {this.uiConfig}
+         firebaseAuth = {firebase.auth()}
+       />
+     )}
+    
+     </div>
+    )
+}
+}
+
 
 export default App;
