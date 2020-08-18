@@ -39,34 +39,9 @@ class Layout extends Component {
         return(
             <LoggedOutComponents />
         )
-
-        // if (!this.props.auth) {
-        //     return (
-        //         <Aux>
-        //             <LoggedOutComponents />  
-        //         </Aux>
-        //         )
-        // } else {
-        //     return ( 
-        //         <Aux>
-        //             <NavigationBar 
-        //                 drawerToggleClicked={this.sideDrawerToggleHandler}
-        //                 logOut={this.props.logOut}
-        //             />
-        //             <LoggedInComponents />
-        //             <Redirect to="/Dashboard" />
-        //             {/* <LoggedOutComponents />   */}
-        //         </Aux>
-        //     )
-        // }
     }
 }
- 
-// const mapStateToProps = state => {
-//     return {
-//         auth: state.auth.userData
-//     };
-// };
+
 
 
 export default Layout;
