@@ -17,8 +17,7 @@ const StyledButton = styled.button`
   justify-content: center;
   cursor: pointer;
   transition: .3s ease;
-  background-color: ${(props)=> props.theme. 
- };
+ 
   margin: 40px;
 
 `;
